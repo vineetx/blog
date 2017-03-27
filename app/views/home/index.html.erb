@@ -1,0 +1,18 @@
+	<h1 class="boom">Articles</h1>
+  <div class="col-sm-4"></div>
+	
+  <div class="col-sm-4 content"><% @article.each do |article| %>
+	<p><strong>Title:</strong><%= article.title %><br>
+
+	<strong>Text:</strong><%= article.text %>
+	<strong><%= article.created_at %></strong></p>
+	<%= link_to 'Edit', edit_article_path(article) %>
+	<%= link_to 'Destroy', article_path(article), method: :delete %>
+	<% end %>
+	</div>
+  <div class="col-sm-4"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="icon-bar new">
+  <a class="active" href="<%= new_article_path %>"><i class="fa fa-code"></i></a> 
+  </div>
+</div>
